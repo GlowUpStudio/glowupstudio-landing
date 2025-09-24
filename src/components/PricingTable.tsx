@@ -62,7 +62,10 @@ export default function PricingTable({ billingCycle }: PricingTableProps) {
         </thead>
         <tbody className="text-gray-700 dark:text-gray-300">
           {/* Precio */}
-          <tr className="border-t border-gray-300 dark:border-gray-700">
+          <tr
+            className="border-t border-gray-300 dark:border-gray-700 opacity-0 animate-fadeIn"
+            style={{ animationDelay: `0s` }}
+          >
             <td className="p-2 sm:p-4 text-left font-semibold border-r border-gray-300 dark:border-gray-700">
               Precio {billingCycle}
             </td>
@@ -87,7 +90,11 @@ export default function PricingTable({ billingCycle }: PricingTableProps) {
             "App instalable en móvil (PWA)",
             "Panel multiusuario",
           ].map((feature, i) => (
-            <tr key={i} className="border-t border-gray-300 dark:border-gray-700">
+            <tr
+              key={i}
+              className="border-t border-gray-300 dark:border-gray-700 opacity-0 animate-fadeIn"
+              style={{ animationDelay: `${(i + 1) * 0.15}s` }}
+            >
               <td className="p-2 sm:p-4 text-left border-r border-gray-300 dark:border-gray-700">
                 {feature}
               </td>

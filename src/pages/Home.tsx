@@ -62,7 +62,7 @@ export default function PeluqueriaLanding() {
     {
       question: "¿El dominio está incluido en el precio?",
       answer:
-        "El dominio (ejemplo: www.tunegocio.com) no está incluido en los planes porque su precio depende del nombre que quieras (suelen costar entre 10 € y 20 € al año). Si ya tienes dominio, lo conectamos sin problema. Si no, te ayudamos a comprarlo a tu nombre para que siempre sea tuyo.",
+        "El dominio (ejemplo: www.tunegocio.com) no está incluido en los planes porque su precio depende del nombre que quieras. Si ya tienes dominio, lo conectamos sin problema. Si no, te ayudamos a comprarlo a tu nombre para que siempre sea tuyo.",
     },
   ];
 
