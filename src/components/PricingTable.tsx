@@ -1,4 +1,5 @@
 import { Check } from "lucide-react";
+import { motion } from "framer-motion";
 
 type BillingCycle = "mensual" | "anual";
 
@@ -33,7 +34,13 @@ export default function PricingTable({ billingCycle }: PricingTableProps) {
           <col />
         </colgroup>
         <thead>
-          <tr className="bg-gray-200 dark:bg-[#2e2e2e]">
+          <motion.tr
+            className="bg-gray-200 dark:bg-[#2e2e2e]"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.6, delay: 0 }}
+          >
             <th className="p-2 sm:p-4 text-left border-r border-gray-300 dark:border-gray-700">
               Características
             </th>
@@ -58,13 +65,16 @@ export default function PricingTable({ billingCycle }: PricingTableProps) {
                 Setup {setup.premium}
               </div>
             </th>
-          </tr>
+          </motion.tr>
         </thead>
         <tbody className="text-gray-700 dark:text-gray-300">
           {/* Precio */}
-          <tr
-            className="border-t border-gray-300 dark:border-gray-700 opacity-0 animate-fadeIn"
-            style={{ animationDelay: `0.1s` }}
+          <motion.tr
+            className="border-t border-gray-300 dark:border-gray-700"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
           >
             <td className="p-2 sm:p-4 text-left font-semibold border-r border-gray-300 dark:border-gray-700">
               Precio {billingCycle}
@@ -76,7 +86,7 @@ export default function PricingTable({ billingCycle }: PricingTableProps) {
               {precios[billingCycle].pro}
             </td>
             <td className="p-2 sm:p-4">{precios[billingCycle].premium}</td>
-          </tr>
+          </motion.tr>
 
           {/* Filas de features */}
           {[
@@ -90,10 +100,13 @@ export default function PricingTable({ billingCycle }: PricingTableProps) {
             "App instalable en móvil (PWA)",
             "Panel multiusuario",
           ].map((feature, i) => (
-            <tr
+            <motion.tr
               key={i}
-              className="border-t border-gray-300 dark:border-gray-700 opacity-0 animate-fadeIn"
-              style={{ animationDelay: `${(i + 1) * 0.1}s` }}
+              className="border-t border-gray-300 dark:border-gray-700"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.6, delay: (i + 2) * 0.2 }}
             >
               <td className="p-2 sm:p-4 text-left border-r border-gray-300 dark:border-gray-700">
                 {feature}
@@ -116,7 +129,7 @@ export default function PricingTable({ billingCycle }: PricingTableProps) {
                   )}
                 </td>
               ))}
-            </tr>
+            </motion.tr>
           ))}
         </tbody>
       </table>
