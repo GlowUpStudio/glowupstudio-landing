@@ -26,7 +26,7 @@ export default function PricingTable({ billingCycle }: PricingTableProps) {
 
   return (
     <div className="w-full overflow-x-auto max-w-6xl mx-auto px-2 sm:px-4">
-      <table className="w-full text-center border-collapse rounded-xl overflow-hidden text-gray-800 dark:text-gray-200 text-[10px] sm:text-sm md:text-base">
+      <table className="min-w-[800px] text-center border-collapse rounded-xl overflow-hidden text-gray-800 dark:text-gray-200 text-[10px] sm:text-sm md:text-base">
         <colgroup>
           <col />
           <col />
