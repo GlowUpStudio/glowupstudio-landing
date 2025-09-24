@@ -7,17 +7,17 @@ interface PricingTableProps {
 }
 
 const precios = {
-  mensual: { basico: "20€", pro: "40€", premium: "80€" },
+  mensual: { basico: "24,99€", pro: "49,99€", premium: "89,99€" },
   anual: {
-    basico: "200€ (16€/mes)",
-    pro: "400€ (33€/mes)",
-    premium: "850€ (71€/mes)",
+    basico: "249€ (20,75€/mes)",
+    pro: "499€ (41,58€/mes)",
+    premium: "949€ (79,08€/mes)",
   },
 };
 
 const setup = {
-  basico: "399€",
-  pro: "549€",
+  basico: "199€",
+  pro: "399€",
   premium: "1190€",
 };
 
@@ -82,6 +82,7 @@ export default function PricingTable({ billingCycle }: PricingTableProps) {
             "Formulario de contacto o WhatsApp",
             "Agenda online para reservas (sin confirmación automática)",
             "Panel sencillo para citas",
+            "Optimización SEO básica",
             "Recordatorios automáticos (WhatsApp/email)",
             "App instalable en móvil (PWA)",
             "Panel multiusuario",
@@ -91,9 +92,9 @@ export default function PricingTable({ billingCycle }: PricingTableProps) {
                 {feature}
               </td>
               {[
-                i < 3,          // Básico: first 3 true, rest false
-                i < 5,          // Pro: first 5 true, rest false
-                true,           // Premium: all true
+                i === 5 ? false : i < 3,          // Básico: first 3 true except SEO (index 5) false
+                i === 5 ? true : i < 5,           // Pro: first 5 true plus SEO (index 5) true
+                true,                            // Premium: all true
               ].map((included, j) => (
                 <td
                   key={j}
@@ -113,11 +114,19 @@ export default function PricingTable({ billingCycle }: PricingTableProps) {
         </tbody>
       </table>
 
-      <p className="text-center text-sm mt-4 sm:mt-6 text-gray-600 dark:text-gray-400">
-        <span className="font-semibold text-gray-900 dark:text-gray-200">
-         PROMOCIÓN HOY -25% DE DESCUENTO EN TODOS LOS PLANES
+      <div className="flex flex-col items-center justify-center mt-4 sm:mt-6">
+        <span className="text-sm text-gray-600 dark:text-gray-400 text-center">
+          <span className="font-bold text-gray-900 dark:text-gray-200">
+            PROMOCIÓN: Solo para los 10 próximos clientes que contraten el plan anual
+          </span>
+          <br />
+          Paga solo 10 meses y disfruta de <span className="font-bold">2 meses gratis</span>.
+          <br />
+          <span className="text-gray-600 dark:text-gray-400 font-semibold">
+            ¡Solo quedan 3 plazas disponibles!
+          </span>
         </span>
-      </p>
+      </div>
     </div>
   );
 }

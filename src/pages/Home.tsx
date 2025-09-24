@@ -40,6 +40,30 @@ export default function PeluqueriaLanding() {
       answer:
         "Sí, puedes empezar con el plan Básico y subir a Pro o Premium cuando quieras, sin complicaciones.",
     },
+    {
+      question: "¿Qué pasa si quiero añadir más funciones después?",
+      answer: "Puedes solicitar mejoras o nuevas funciones en cualquier momento. Te ofrecemos opciones de ampliación según tus necesidades.",
+    },
+    {
+      question: "¿Puedo cancelar mi suscripción en cualquier momento?",
+      answer:
+        "Sí, puedes cancelar cuando quieras y sin costes adicionales. Solo tienes que avisarnos y la anulación se realiza el mismo día, sin necesidad de antelación. Ten en cuenta que no se realizan devoluciones de pagos ya efectuados.",
+    },
+    {
+      question: "¿La web es mía si dejo de pagar?",
+      answer:
+        "El servicio funciona bajo un modelo de suscripción. Mientras esté activo, tendrás acceso completo a tu web y app. Si cancelas la suscripción, se pierde el acceso.",
+    },
+    {
+      question: "¿Mi web estará optimizada para Google (SEO)?",
+      answer:
+        "La optimización para Google (SEO) está incluida en los planes Pro y Premium. El plan Básico no incluye optimización SEO.",
+    },
+    {
+      question: "¿El dominio está incluido en el precio?",
+      answer:
+        "El dominio (ejemplo: www.tunegocio.com) no está incluido en los planes porque su precio depende del nombre que quieras (suelen costar entre 10 € y 20 € al año). Si ya tienes dominio, lo conectamos sin problema. Si no, te ayudamos a comprarlo a tu nombre para que siempre sea tuyo.",
+    },
   ];
 
   const [openFAQ, setOpenFAQ] = useState<number | null>(null);
