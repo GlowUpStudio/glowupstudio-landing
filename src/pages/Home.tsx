@@ -316,7 +316,7 @@ export default function PeluqueriaLanding() {
             ))}
           </div>
           <p className="text-sm text-gray-600 dark:text-[#B0B0B5] max-w-3xl mx-auto mt-6">
-            👉 Importante: el número de reservas, ventas o contactos depende de tu marketing y tu gestión. Nosotros garantizamos la <span className="font-semibold">calidad y el funcionamiento técnico</span> de la web/app.
+            Importante: el número de reservas, ventas o contactos depende de tu marketing y tu gestión. Nosotros garantizamos la <span className="font-semibold">calidad y el funcionamiento técnico</span> de la web/app.
           </p>
         </div>
       </motion.section>
