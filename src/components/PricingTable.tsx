@@ -25,8 +25,9 @@ const setup = {
 export default function PricingTable({ billingCycle }: PricingTableProps) {
 
   return (
-    <div className="w-full overflow-x-auto max-w-6xl mx-auto px-2 sm:px-4">
-      <table className="min-w-[800px] text-center border-collapse rounded-xl overflow-hidden text-gray-800 dark:text-gray-200 text-[10px] sm:text-sm md:text-base">
+    <div className="w-full max-w-6xl mx-auto px-2 sm:px-4">
+      <div className="overflow-hidden">
+        <table className="w-full text-center border-collapse rounded-xl text-gray-800 dark:text-gray-200 text-[10px] sm:text-sm md:text-base">
         <colgroup>
           <col />
           <col />
@@ -105,8 +106,8 @@ export default function PricingTable({ billingCycle }: PricingTableProps) {
               className="border-t border-gray-300 dark:border-gray-700"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.6, delay: (i + 2) * 0.2 }}
+              viewport={{ once: false, amount: 0.05 }}
+              transition={{ duration: 0.6, delay: i * 0.1 }}
             >
               <td className="p-2 sm:p-4 text-left border-r border-gray-300 dark:border-gray-700">
                 {feature}
@@ -132,9 +133,10 @@ export default function PricingTable({ billingCycle }: PricingTableProps) {
             </motion.tr>
           ))}
         </tbody>
-      </table>
+        </table>
+      </div>
 
-      <div className="flex flex-col items-center justify-center mt-4 sm:mt-6">
+      <div className="flex flex-col items-center justify-center mt-8 sm:mt-10">
         <span className="text-sm text-gray-600 dark:text-gray-400 text-center">
           <span className="font-bold text-gray-900 dark:text-gray-200">
             PROMOCIÓN: Solo para los 10 próximos clientes que contraten el plan anual
